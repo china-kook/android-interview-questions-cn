@@ -19,41 +19,61 @@
 3. 第三步是补充与完善，原项目虽然列了不少领域，但是总归有些遗漏的，比如 Android 安全、插件化、Kotlin 等等，第三步是找在某一领域研究比较深的同学加入进来，对一些领域进行补充、完善，甚至会推出一些专题等；
 
 ## Contents
-* [数据结构和算法](#数据结构与算法)
-* [Java 核心](#java-核心)
-* [Android 核心](#android-核心)
-* [架构](#architecture)
-* [设计问题](#design-problem)
-* [工具和技能](#tools-and-technologies)
-* [Android 测试驱动开发](#android-test-driven-development)
-* [其他](#others)
+
+ * [数据结构和算法](#数据结构与算法)
+ * [Java 核心](#java-核心)
+ * [Android 核心](#android-核心)
+ * [架构](#架构)
+ * [设计问题](#设计问题)
+ * [工具和技能](#工具和技能)
+ * [Android 测试驱动开发](#android-测试驱动开发)
+ * [其他](#其他)
+
 
 ### 数据结构与算法
 
-> 关于数据结构与算法，问题的难度完全取决于你所申请的公司
+> 数据结构与算法问题的难度完全取决于你所申请的公司
 
 * 数组
+    - 数组由一组相同的数据类型组成。它存储在连续的内存空间内，使用索引可以找到元素的地址。数组包括一维数组和多维数组,一维数组是最简单的数据结构,也是最常用的。
+
+        | 算法 | 平均 | 最坏 |
+        |:-------------:|:-----:|:-----:|
+        | 空间（Space）  | O(n)  | O(n)  |    
+        | 查找（Search） | O(n)  | O(n)  |
+        | 插入（Insert） | O(n)  | O(n)  |
+        | 删除（Delete） | O(n)  | O(n)  |
 
 * 链表
    - 链表看起来更像树，而不是数组，它使用一组结点来表示一个序列。每一个结点都包含数据和一个指针。在链表中，结点中的数据可以为任意类型，而指针则是指向下一结点的引用。链表包含一个头结点和一个尾结点。头结点是链表中的第一个结点，尾结点是最后一个结点。链表不是一个循环数据结构，所以尾结点没有指向头结点的指针，指针为空。一些基础方法的时间复杂度如下：
 
-        |     算法      |  平均  |  最差  |
-        | :---------: | :--: | :--: |
+        | 算法          | 平均 | 最坏  |
+        |:------------:|:----:|:----:|
         | 空间 (Space)  | O(n) | O(n) |
         | 查找 (Search) | O(n) | O(n) |
         | 插入 (Insert) | O(1) | O(1) |
         | 删除 (Delete) | O(1) | O(1) |
 
 * 双向链表
+   - 一个双向链表首先是一个链表，但是在每个结点中有两个指针，前驱指针指向前驱结点，后继指针指向后继结点。双向链表也有一个头结点，头结点的后继指针指向第一个结点。最后一个结点的后继指针指向空，但是如果最后一个结点的后继指针指向第一个结点，这时称这个链表为双向循环链表。双向循环链表能非常方便地从每个结点查找它的前驱结点和后继结点。
+
+       ![双向链表](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
+            
+        | 算法          | 平均 | 最坏  |
+        |:------------:|:----:|:----:|
+        | 空间 (Space)  | O(n) | O(n) |
+        | 查找 (Search) | O(n) | O(n) |
+        | 插入 (Insert) | O(1) | O(1) |
+        | 删除 (Delete) | O(1) | O(1) |
 
 * 栈
-    - 栈是一个有着“后进先出”特性的基础数据结构，这就意味着最后一个入栈的元素，也是第一个出栈的。栈就像是一堆书，想要得到书堆中的第一本书（最下面一本），必须把其他的书都先拿走。向栈中添加一个元素的操作被称为 Push（入栈），删除一个元素的操作被称为 Pop（出栈），查看且不删除最后一个入栈的元素的操作被称为 Top 。[实现栈的常用方法是使用链表（LinkedList），也可以使用不允许空值的 StackArray（使用数组实现），还有允许空值的 Vector](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#Performance_Analysis)
+    - 栈是一个有着「后进先出」特性的基础数据结构，这就意味着最后一个入栈的元素，也是第一个出栈的。栈就像是一堆书，想要得到书堆中的第一本书（最下面一本），必须把其他的书都先拿走。向栈中添加一个元素的操作被称为 Push（入栈），删除一个元素的操作被称为 Pop（出栈），查看且不删除最后一个入栈的元素的操作被称为 Top 。[实现栈的常用方法是使用链表（LinkedList），也可以使用不允许空值的 StackArray（使用数组实现），还有允许空值的 Vector](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#Performance_Analysis)
 
         <table>
             <tr>
                 <th>算法</th>
                 <th>平均</th>
-                <th>最差</th>
+                <th>最坏</th>
                 <th>图形表示</th>
             </tr>
             <tr>
@@ -108,6 +128,7 @@
 
 * 贪心算法
 
+
 ### Java 核心
 
 - 解释一下 OOP 的概念
@@ -157,9 +178,7 @@
 
   <p align="center">
 
-  ```
   <img alt="Overloading and Overriding" src="https://github.com/stormzhang/android-interview-questions-cn/blob/master/assets/overloading-vs-overriding.png">
-  ```
 
   </p>
 
@@ -224,6 +243,7 @@
 - 什么是 Java 优先级队列？
 
 - 什么是设计模式 [Link](https://github.com/iluwatar/java-design-patterns)
+
 
 ### Android 核心
 
@@ -406,11 +426,114 @@
 
 * 在 Android 中怎么处理多点触控？[link](https://arjun-sna.github.io/android/2016/07/20/multi-touch-android/)
 
+
+### 架构
+
+* 请介绍一下你做的上一个 App 的架构。
+
+* 请介绍一下 MVP。 [Link](https://blog.mindorks.com/essential-guide-for-designing-your-android-app-architecture-mvp-part-1-74efaf1cda40)
+
+* Presenter 是什么？
+
+* 什么是模型？
+
+* 请介绍一下 MVC。
+
+* Controller 是什么？
+
+* 请介绍一下 MVVM。 [Link](https://github.com/MindorksOpenSource/android-mvvm-architecture)
+
+* 谈谈你对代码整洁之道（clean code）的理解。[Link](https://blog.mindorks.com/every-programmer-should-read-this-book-6755dedec78d)
+
+
+### 设计问题
+
+* 请设计 Uber App。
+
+* 请设计 Facebook App。
+
+* 请设计 Facebook Near-By Friends App。
+
+* 请设计 WhatsApp。
+
+* 请设计 SnapChat。
+
+* 基于地理位置 App 的设计问题。
+
+
+### 工具和技能
+
+* Git. [Link](https://github.com/git-tips/tips)
+
+* RxJava. [Link](https://blog.mindorks.com/a-complete-guide-to-learn-rxjava-b55c0cea3631)
+
+* Dagger 2. [Link](https://medium.com/p/a-complete-guide-to-learn-dagger-2-b4c7a570d99c)
+
+* Android 开发实用工具。 [Link](https://blog.mindorks.com/android-development-useful-tools-fd73283e82e3)
+
+* Firebase. [Link](https://firebase.google.com/)
+
+
+### Android 测试驱动开发
+
+* Espresso 是什么？ [Link](https://developer.android.com/training/testing/ui-testing/espresso-testing.html)
+
+* Robolectric 是什么？ [Link](http://robolectric.org/)
+
+* UI-Automator 是什么？ [Link](https://developer.android.com/training/testing/ui-testing/uiautomator-testing.html)
+
+* 请解释一下单元测试。
+
+* 请解释一下设备化测试。
+
+* 你是否做过单元测试或者自动测试？
+
+* 为什么要使用 Mockito？ [Link](http://site.mockito.org/)
+
+* 请描述一下 JUnit 测试。
+
+
+### 其他
+
+* 描述一下 REST APIs 如何工作 ？
+
+* 描述一下 SQLite 。
+
+* 描述一下 数据库 。
+
+* 项目管理工具 - trello ，basecamp ，kanban ，jira ，asana 。
+
+* 关于构建系统 - gradle , ant , buck 。
+
+* APK 逆向工程 。
+
+* 混淆器用于什么 ？
+
+* 什么是混淆？ 用于什么？ 如何压缩 ？
+
+* 如何构建你的发布版本的 APP ？
+
+* 如何面向特定用户群体更新应用程序版本 ？
+
+* 可以识别卸载我们的应用程序的用户吗 ？
+
+* 缩小 APK 的体积 。[Link](https://blog.mindorks.com/how-to-reduce-apk-size-in-android-2f3713d2d662)
+
+* Android 开发最佳实践 。[Link](https://blog.mindorks.com/android-development-best-practices-83c94b027fd3)
+
+* Android 代码风格和指南 。[Link](https://blog.mindorks.com/android-code-style-and-guidelines-d5f80453d5c7)
+
+* 你尝试使用过 Kotlin 吗 ？[Link](https://blog.mindorks.com/why-you-must-try-kotlin-for-android-development-e14d00c8084b)
+
+* 开发 Android 应用程序时应该连续测量哪些指标 ？[Link](https://blog.mindorks.com/android-app-performance-metrics-a1176334186e)
+
+
 ### 贡献者
 
 感谢这些无私的贡献者，排名不分先后。
 
-[mengxn](https://github.com/mengxn)、[innovatorCL](https://github.com/innovatorCL)、[SmartNJ](https://github.com/SmartNJ)、[Zhiw](https://github.com/Zhiw)、[innovatorCL](https://github.com/innovatorCL)、[lanyuanxiaoyao](https://github.com/lanyuanxiaoyao)、[934079371](https://github.com/934079371)、[cdevelopr](https://github.com/cdevelopr)、[smartbeng](https://github.com/smartbeng)、[china-kook](https://github.com/china-kook)、[androidZzT](https://github.com/mrfanr)、[](https://github.com/androidZzT)
+[mengxn](https://github.com/mengxn)、[innovatorCL](https://github.com/innovatorCL)、[SmartNJ](https://github.com/SmartNJ)、[Zhiw](https://github.com/Zhiw)、[lanyuanxiaoyao](https://github.com/lanyuanxiaoyao)、[934079371](https://github.com/934079371)、[cdevelopr](https://github.com/cdevelopr)、[smartbeng](https://github.com/smartbeng)、[ikook](https://github.com/china-kook)、[mrfanr](https://github.com/mrfanr)、[androidZzT](https://github.com/androidZzT)、[qiaojialin](https://github.com/qiaojialin)、[maokai1229](https://github.com/maokai1229)、[renxuelong](https://github.com/renxuelong)、[dzx1994](https://github.com/dzx1994)
+
 
 ### License
 
